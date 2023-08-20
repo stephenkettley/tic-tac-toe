@@ -9,7 +9,7 @@ body {
     background: rgb(44, 122, 205);
 }
 
-.select-box, .play-board {
+.select-box, .play-board, .result-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,7 +21,7 @@ body {
     border-radius: 10px;
     max-width: 330px;
     width: 100%;
-    display: none;
+    /* display: none; */
 }
 
 .select-box header {
@@ -75,6 +75,9 @@ body {
     border-radius: 5px;
 }
 
+.play-board {
+    display: none;
+}
 .play-board .details .players {
     display: flex;
     width: 100%;
@@ -89,10 +92,14 @@ body {
     font-weight: 500;
     cursor: default; 
     text-align: center;
-    color: rgb(37, 112, 202)
+    color: rgb(37, 112, 202);
+    position: relative;
+    z-index: 5;
 }
 
-
+.details span:first-child {
+    color: white;
+}
 
 .details .slider {
     position: absolute;
@@ -101,6 +108,8 @@ body {
     height: 100%;
     width: 50%  ;
     background: rgb(37, 112, 202);
+    border-radius: 5px ;
+    z-index: 2;
 }
 
 .play-board section {
@@ -121,4 +130,48 @@ body {
 
 .play-board .play-area {
     margin-top: 15px;
+}
+
+.result-box {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    display: none;
+}
+
+.result-box .won-text {
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-text p {
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+.result-box .btn {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.result-box .btn button {
+    font-size: 18px;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background: rgb(37, 112, 202);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.result-box .btn button:hover {
+    transform: scale(0.93);
+
 }
