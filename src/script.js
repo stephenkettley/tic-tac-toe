@@ -17,14 +17,40 @@ window.onload = () => {
   selectOBtn.onclick = () => {
     selectBox.classList.add("hide");
     playBoard.classList.add("show");
-    players.setAttribute("class", "players active");
+    players.setAttribute("class", "players active player");
   };
 };
 
-let playerXIcon = "fas fa-times";
-let playerOIcon = "far fa-circle";
-
+// user click function
 function clickedBox(element) {
-  // if () {
-  // }
+  if (players.classList.contains("player")) {
+    element.innerHTML = `<i class="fa-solid fa-o"></i>`;
+    players.classList.add("active");
+  } else {
+    element.innerHTML = `<i class="fa-solid fa-x"></i>`;
+    players.classList.add("active");
+  }
+  element.style.pointerEvents = "none"; // box can't be clicked multiple times
+
+  bot();
+}
+
+// bot click function
+function bot() {
+  let array = [];
+  for (let i = 0; i < allBox.length; i++) {
+    if (allBox[i].childElementCount == 0) {
+      array.push(i);
+    }
+  }
+  let randomBox = array[Math.floor(Math.random() * array.length)];
+  if (array.length > 0) {
+    if (players.classList.contains("player")) {
+      allBox[randomBox].innerHTML = `<i class="fa-solid fa-x"></i>`;
+      players.classList.add("active");
+    } else {
+      allBox[randomBox].innerHTML = `<i class="fa-solid fa-o"></i>`;
+      players.classList.add("active");
+    }
+  }
 }
