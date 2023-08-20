@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background: rgb(44, 122, 205);
+}
+
+.select-box, .play-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.select-box {
+    background: white;
+    padding: 20px 25px 25px;
+    border-radius: 10px;
+    max-width: 330px;
+    width: 100%;
+    display: none;
+}
+
+.select-box header {
+    font-size: 30px; 
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.select-box .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.select-box .options {
+    display: flex;
+    width: 100%;
+
+}
+
+.options button {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background: rgb(37, 112, 202);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options button:hover {
+    transform: scale(0.93);
+}
+
+.options button.playerX {
+    margin-right: 5px;
+}
+
+.options button.playerO {
+    margin-left: 5px;
+}
+
+.play-board .details {
+    background: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.play-board .details .players {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+}
+.play-board .details span {
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: default; 
+    text-align: center;
+    color: rgb(37, 112, 202)
+}
+
+
+
+.details .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%  ;
+    background: rgb(37, 112, 202);
+}
+
+.play-board section {
+    display: flex;
+}
+.play-board section span {
+    margin: 2px;
+    display: block;
+    height: 80px;
+    width: 80px;
+    background: white;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 80px;
+    color: rgb(37, 112, 202);
+}
+
+.play-board .play-area {
+    margin-top: 15px;
+}
